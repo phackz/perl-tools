@@ -25,8 +25,8 @@ sub check_port {
   $sock->close();
 }
 
-#check_port("170.63.171.6", 636);
-#check_port("170.63.171.7", 636);
+check_port("170.63.171.6", 636);
+check_port("170.63.171.7", 636);
 
 # Could also create hash to handle many servers
 # with a while or for statement
@@ -36,9 +36,9 @@ my %servers = ("170.63.171.6" => 636,
                "10.0.0.1"     => 22,
               );
 
-#while(my ($server, $port) = each(%servers)) {
-#  check_port($server, $port);
-#}
+while(my ($server, $port) = each(%servers)) {
+  check_port($server, $port);
+}
 
 # errors could be handled with eval if you don't want
 # the program to exit upon failure
